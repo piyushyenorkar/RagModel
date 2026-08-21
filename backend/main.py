@@ -56,8 +56,8 @@ async def startup():
     logger.info("Starting Voice-Enabled RAG server...")
     try:
         from backend.retrieval import get_embedding_model, get_qdrant_client
-        get_embedding_model()  # Preload — takes ~2s first time
-        get_qdrant_client()
+        # get_embedding_model()  # Preload — takes ~2s first time
+        # get_qdrant_client()
         logger.info("Models and Qdrant preloaded successfully")
     except Exception as e:
         logger.warning(f"Preload warning (may not be indexed yet): {e}")
