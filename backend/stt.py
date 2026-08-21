@@ -67,13 +67,14 @@ async def transcribe(audio_bytes: bytes, filename: str = "audio.wav") -> Transcr
                 SARVAM_STT_URL,
                 headers={
                     "api-subscription-key": SARVAM_API_KEY,
-                    "Content-Type": "application/json",
                 },
-                json={
-                    "url": f"data:{content_type};base64,{base64.b64encode(audio_bytes).decode('utf-8')}",
+                files={
+                    "file": (filename, audio_bytes, content_type)
+                },
+                data={
                     "model": "saaras:v2",
                     "language_code": "hi-IN",
-                    "with_timestamps": False,
+                    "with_timestamps": "false",
                 }
             )
         
