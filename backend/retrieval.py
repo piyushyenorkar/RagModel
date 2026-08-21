@@ -18,7 +18,8 @@ logger = logging.getLogger(__name__)
 
 # ── Globals (loaded once, reused) ────────────────────────────────────────────
 
-QDRANT_PATH = os.getenv("QDRANT_PATH", "./qdrant_local")
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+QDRANT_PATH = os.getenv("QDRANT_PATH", os.path.join(BASE_DIR, "qdrant_local"))
 COLLECTION_NAME = os.getenv("COLLECTION_NAME", "msmarco_hi")
 EMBEDDING_MODEL = os.getenv("EMBEDDING_MODEL", "paraphrase-multilingual-MiniLM-L12-v2")
 
