@@ -14,7 +14,7 @@ const STRATEGIES = [
   { id: 'metadata', label: 'Metadata', icon: Tags },
 ]
 
-const API_BASE = ''
+const API_BASE = 'https://ragmodel-3unk.onrender.com'
 
 function App() {
   const [strategy, setStrategy] = useState('fixed')

@@ -1,6 +1,6 @@
 # Backend
 .env
-qdrant_local/
+# qdrant_local/ (Need this for Render deployment)
 __pycache__/
 *.pyc
 *.pyo
