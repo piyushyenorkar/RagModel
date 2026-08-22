@@ -27,11 +27,12 @@ _embedding_model: SentenceTransformer | None = None
 _qdrant_client: QdrantClient | None = None
 
 
-def get_embedding_model() -> SentenceTransformer:
+def get_embedding_model():
     """Lazy-load the embedding model (runs on CPU, no network call)."""
     global _embedding_model
     if _embedding_model is None:
         logger.info(f"Loading embedding model: {EMBEDDING_MODEL}")
+        from sentence_transformers import SentenceTransformer
         _embedding_model = SentenceTransformer(EMBEDDING_MODEL)
         logger.info("Embedding model loaded successfully")
     return _embedding_model
